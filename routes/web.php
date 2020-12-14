@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','journalController@index');
+
+Route::get('/student/journal/{kelas}','journalController@byClassStudent');
+// Route::get('/student/journal/{kelas}','journalController@index');
 
 
 Route::group(['prefix' => 'admin'], function () {
